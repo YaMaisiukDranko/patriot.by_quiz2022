@@ -1086,10 +1086,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278c09f384ed44d2985233256f1469cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QnA: []
+  QnA:
+  - question: 
+    answers: []
+    correctAnswer: 0
+  - question: 
+    answers: []
+    correctAnswer: 0
   options: []
   currentQuestion: 0
-  questionText: {fileID: 0}
+  questionText: {fileID: 837471859}
 --- !u!4 &1185435031
 Transform:
   m_ObjectHideFlags: 0
