@@ -15,7 +15,13 @@ public class QuizManager : MonoBehaviour
    {
       for (int i = 0; i < options.Length; i++)
       {
+         options[i].GetComponent<AnswersScript>().isCorrect = false;
          options[i].transform.GetChild(0).GetComponent<TMP_Text>().text = QnA[currentQuestion].answers[i];
+
+         if (QnA[currentQuestion].correctAnswer == i++)
+         {
+            options[i].GetComponent<AnswersScript>().isCorrect = true;
+         }
       }
    }
    
