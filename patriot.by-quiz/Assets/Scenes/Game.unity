@@ -1087,13 +1087,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - question: 
-    answers: []
-    correctAnswer: 0
-  - question: 
-    answers: []
-    correctAnswer: 0
-  options: []
+  - question: 'Your Name is '
+    answers:
+    - jeff
+    - john
+    - umka
+    - orakul
+    correctAnswer: 2
+  options:
+  - {fileID: 1955000908}
+  - {fileID: 2077127717}
+  - {fileID: 375305731}
+  - {fileID: 487922673}
   currentQuestion: 0
   questionText: {fileID: 837471859}
 --- !u!4 &1185435031

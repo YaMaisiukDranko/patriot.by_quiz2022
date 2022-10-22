@@ -13,6 +13,7 @@ public class AnswersScript : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct Answer");
+            quizManager.Correct();
         }
         else
         {
