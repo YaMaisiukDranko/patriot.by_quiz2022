@@ -20,6 +20,12 @@ public class QuizManager : MonoBehaviour
 
    public void Correct()
    {
+      StartCoroutine(Answer());
+   }
+
+   public IEnumerator Answer()
+   {
+      yield return new WaitForSeconds(0.75f);
       QnA.RemoveAt(currentQuestion);
       GenerateQuestion();
    }
