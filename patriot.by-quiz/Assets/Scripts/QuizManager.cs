@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class QuizManager : MonoBehaviour
 {
@@ -11,6 +13,17 @@ public class QuizManager : MonoBehaviour
 
    public TMP_Text questionText;
 
+   private void Start()
+   {
+      GenerateQuestion();
+   }
+
+   public void Correct()
+   {
+      QnA.RemoveAt(currentQuestion);
+      GenerateQuestion();
+   }
+   
    void SetAnswers()
    {
       for (int i = 0; i < options.Length; i++)
@@ -25,10 +38,11 @@ public class QuizManager : MonoBehaviour
       }
    }
    
-   void generateQuestion()
+   void GenerateQuestion()
    {
       currentQuestion = Random.Range(0, QnA.Count);
 
       questionText.text = QnA[currentQuestion].question;
+      SetAnswers();
    }
 }

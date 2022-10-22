@@ -5,6 +5,8 @@ using UnityEngine;
 public class AnswersScript : MonoBehaviour
 {
     public bool isCorrect;
+    public QuizManager quizManager;
+    
 
     public void AnswerChecker()
     {
@@ -15,6 +17,7 @@ public class AnswersScript : MonoBehaviour
         else
         {
             Debug.Log("Wrong Answer");
+            quizManager.Correct();
         }
     }
 }
