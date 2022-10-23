@@ -60,6 +60,7 @@ public class QuizManager : MonoBehaviour
       else
       {
          finishPanel.SetActive(true);
+         answersScript.counter.SetScore();
       }
    }
 }
