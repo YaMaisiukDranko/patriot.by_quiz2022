@@ -20,8 +20,7 @@ public class QuizManager : MonoBehaviour
    {
       GenerateQuestion();
    }
-   
-   
+
    public void Correct()
    {
       StartCoroutine(Answer());
