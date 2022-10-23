@@ -42,9 +42,9 @@ public class QuizManager : MonoBehaviour
    public IEnumerator Answer()
    {
       yield return new WaitForSeconds(0.75f);
+      answersScript.ResetColor();
       QnA.RemoveAt(currentQuestion);
       GenerateQuestion();
-      answersScript.ResetColor();
    }
    
    void GenerateQuestion()

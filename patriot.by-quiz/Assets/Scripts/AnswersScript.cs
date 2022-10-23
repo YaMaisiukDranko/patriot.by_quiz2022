@@ -31,9 +31,12 @@ public class AnswersScript : MonoBehaviour
             quizManager.Correct();
         }
     }
-
+    
     public void ResetColor()
     {
-        GetComponent<Image>().color = startColor;
+        for (int i = 0; i < quizManager.options.Length; i++)
+        {
+            quizManager.options[i].GetComponent<Image>().color = startColor;
+        }
     }
 }
