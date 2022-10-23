@@ -21,16 +21,21 @@ public class AnswersScript : MonoBehaviour
 
     public void AnswerChecker()
     {
+        Color correctCol;
+        Color wrongCol;
+
+        ColorUtility.TryParseHtmlString("#74D3AE", out correctCol);
+        ColorUtility.TryParseHtmlString("#FF3366", out wrongCol);
         if (isCorrect)
         {
-            GetComponent<Image>().color = Color.green;
+            GetComponent<Image>().color = correctCol;
             Debug.Log("Correct Answer");
             quizManager.Correct();
             counter.score++;
         }
         else 
         {
-            GetComponent<Image>().color = Color.red;
+            GetComponent<Image>().color = wrongCol;
             Debug.Log("Wrong Answer");
             quizManager.Correct();
         }

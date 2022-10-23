@@ -13,6 +13,7 @@ public class QuizManager : MonoBehaviour
    private AnswersScript answersScript;
 
    public GameObject finishPanel;
+   public GameObject gamePanel;
 
    public TMP_Text questionText;
 
@@ -60,6 +61,7 @@ public class QuizManager : MonoBehaviour
       else
       {
          finishPanel.SetActive(true);
+         gamePanel.SetActive(false);
          answersScript.counter.SetScore();
       }
    }
