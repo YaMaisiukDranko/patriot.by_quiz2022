@@ -276,7 +276,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 487922678}
+      - m_Target: {fileID: 375305736}
         m_TargetAssemblyTypeName: AnswersScript, Assembly-CSharp
         m_MethodName: AnswerChecker
         m_Mode: 1
@@ -340,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 1185435030}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &487922673
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 1185435030}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &503891950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1126,7 @@ MonoBehaviour:
     - she
     - 'it '
     - me
-    correctAnswer: 3
+    correctAnswer: 1
   options:
   - {fileID: 1955000908}
   - {fileID: 2077127717}
@@ -1695,7 +1697,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 487922678}
+      - m_Target: {fileID: 1955000913}
         m_TargetAssemblyTypeName: AnswersScript, Assembly-CSharp
         m_MethodName: AnswerChecker
         m_Mode: 1
@@ -1759,6 +1761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 1185435030}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2077127717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 487922678}
+      - m_Target: {fileID: 2077127722}
         m_TargetAssemblyTypeName: AnswersScript, Assembly-CSharp
         m_MethodName: AnswerChecker
         m_Mode: 1
@@ -1908,3 +1911,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 1185435030}
+  startColor: {r: 1, g: 1, b: 1, a: 1}

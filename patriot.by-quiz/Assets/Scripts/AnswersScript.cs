@@ -24,11 +24,11 @@ public class AnswersScript : MonoBehaviour
             Debug.Log("Correct Answer");
             quizManager.Correct();
         }
-        else
+        else 
         {
             GetComponent<Image>().color = Color.red;
             Debug.Log("Wrong Answer");
-            quizManager.Wrong();
+            quizManager.Correct();
         }
     }
 

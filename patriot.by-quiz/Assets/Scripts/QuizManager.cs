@@ -24,12 +24,6 @@ public class QuizManager : MonoBehaviour
       StartCoroutine(Answer());
    }
 
-   public void Wrong()
-   { 
-      StartCoroutine(Answer());
-   }
-   
-   
    void SetAnswers()
    {
       for (int i = 0; i < options.Length; i++)
