@@ -12,13 +12,16 @@ public class QuizManager : MonoBehaviour
    public int currentQuestion;
    private AnswersScript answersScript;
 
+   public GameObject finishPanel;
+
    public TMP_Text questionText;
 
    private void Start()
    {
       GenerateQuestion();
    }
-
+   
+   
    public void Correct()
    {
       StartCoroutine(Answer());
@@ -38,7 +41,6 @@ public class QuizManager : MonoBehaviour
          }
       }
    }
-   
    public IEnumerator Answer()
    {
       yield return new WaitForSeconds(0.75f);
@@ -49,9 +51,16 @@ public class QuizManager : MonoBehaviour
    
    void GenerateQuestion()
    {
-      currentQuestion = Random.Range(0, QnA.Count);
+      if (QnA.Count > 0)
+      {
+         currentQuestion = Random.Range(0, QnA.Count);
 
-      questionText.text = QnA[currentQuestion].question;
-      SetAnswers();
+         questionText.text = QnA[currentQuestion].question;
+         SetAnswers();
+      }
+      else
+      {
+         finishPanel.SetActive(true);
+      }
    }
 }
