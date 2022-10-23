@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class AnswersScript : MonoBehaviour
@@ -10,10 +11,12 @@ public class AnswersScript : MonoBehaviour
     public QuizManager quizManager;
 
     public Color startColor;
+    public ScoreCounter counter;
 
     private void Start()
     {
         startColor = GetComponent<Image>().color;
+        counter = quizManager.gameObject.GetComponent<ScoreCounter>();
     }
 
     public void AnswerChecker()
@@ -23,6 +26,7 @@ public class AnswersScript : MonoBehaviour
             GetComponent<Image>().color = Color.green;
             Debug.Log("Correct Answer");
             quizManager.Correct();
+            counter.score++;
         }
         else 
         {
