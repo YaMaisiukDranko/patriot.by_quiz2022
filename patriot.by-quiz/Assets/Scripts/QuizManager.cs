@@ -17,9 +17,21 @@ public class QuizManager : MonoBehaviour
 
    public TMP_Text questionText;
 
+   //public bool fadeOutAnim;
+   public GameObject fader;
+   public Animator fadeOutAnimator;
+
    private void Start()
    {
+      fadeOutAnimator.SetTrigger("FadeOut");
+      StartCoroutine(FadeOut());
       GenerateQuestion();
+   }
+
+   IEnumerator FadeOut()
+   {
+      yield return new WaitForSeconds(2);
+      fader.SetActive(false);
    }
 
    public void Correct()
