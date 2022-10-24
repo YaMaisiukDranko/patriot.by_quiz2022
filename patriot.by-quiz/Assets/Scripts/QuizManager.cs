@@ -9,22 +9,29 @@ public class QuizManager : MonoBehaviour
 {
    public List<QandA> QnA;
    public GameObject[] options;
+   
    public int currentQuestion;
+   private int questionNum;
+   
    private AnswersScript answersScript;
-
+   private ScoreCounter sc;
+   
    public GameObject finishPanel;
    public GameObject gamePanel;
 
    public TMP_Text questionText;
+   public TMP_Text questionNumber;
 
-   //public bool fadeOutAnim;
+   //Animations
    public GameObject fader;
    public Animator fadeOutAnimator;
+
 
    private void Start()
    {
       fadeOutAnimator.SetTrigger("FadeOut");
       StartCoroutine(FadeOut());
+      sc = gameObject.GetComponent<ScoreCounter>();
       GenerateQuestion();
    }
 
@@ -63,6 +70,7 @@ public class QuizManager : MonoBehaviour
    
    void GenerateQuestion()
    {
+      questionNum += 1;
       if (QnA.Count > 0)
       {
          currentQuestion = Random.Range(0, QnA.Count);
@@ -76,5 +84,10 @@ public class QuizManager : MonoBehaviour
          gamePanel.SetActive(false);
          answersScript.counter.SetScore();
       }
+   }
+
+   private void FixedUpdate()
+   {
+      questionNumber.text = questionNum + "/" + sc.questions;
    }
 }

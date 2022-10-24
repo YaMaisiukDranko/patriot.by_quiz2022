@@ -6,7 +6,7 @@ public class ScoreCounter : MonoBehaviour
     public int score;
     public TMP_Text scoreText;
     private QuizManager quizManager;
-    private int questions;
+    public int questions;
 
     private void Start()
     {
