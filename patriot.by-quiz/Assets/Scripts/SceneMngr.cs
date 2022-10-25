@@ -6,20 +6,27 @@ using UnityEngine.SceneManagement;
 public class SceneMngr : MonoBehaviour
 {
     public Animator fadeIn;
-    public Animator fadeOut;
     public GameObject fader;
 
     public void FadeIn()
     {
         fader.SetActive(true);
         fadeIn.SetTrigger("FadeIn");
-        StartCoroutine(LoadGame());
+        StartCoroutine(LoadScene());
     }
 
-    IEnumerator LoadGame()
+    IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(1);
-        DontDestroyOnLoad(gameObject);
+        if (SceneManager.GetActiveScene().buildIndex == 0) //Check Scene Number
+        {
+            SceneManager.LoadScene(1);
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+       
     }
 }

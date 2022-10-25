@@ -12,7 +12,10 @@ public class AnswersScript : MonoBehaviour
 
     public Color startColor;
     public ScoreCounter counter;
-
+    
+    Color correctCol;
+    Color wrongCol;
+    
     private void Start()
     {
         startColor = GetComponent<Image>().color;
@@ -21,9 +24,6 @@ public class AnswersScript : MonoBehaviour
 
     public void AnswerChecker()
     {
-        Color correctCol;
-        Color wrongCol;
-
         ColorUtility.TryParseHtmlString("#74D3AE", out correctCol);
         ColorUtility.TryParseHtmlString("#FF3366", out wrongCol);
         if (isCorrect)
@@ -38,6 +38,7 @@ public class AnswersScript : MonoBehaviour
             GetComponent<Image>().color = wrongCol;
             Debug.Log("Wrong Answer");
             quizManager.Correct();
+            ShowCorrect();
         }
     }
     
@@ -46,6 +47,14 @@ public class AnswersScript : MonoBehaviour
         for (int i = 0; i < quizManager.options.Length; i++)
         {
             quizManager.options[i].GetComponent<Image>().color = startColor;
+        }
+    }
+
+    void ShowCorrect()
+    {
+        if (GameObject.FindWithTag("Answer").GetComponent<AnswersScript>().isCorrect)
+        {
+            GameObject.FindWithTag("Answer").GetComponent<Image>().color = correctCol;
         }
     }
 }
