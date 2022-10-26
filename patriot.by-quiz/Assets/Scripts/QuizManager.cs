@@ -9,7 +9,7 @@ public class QuizManager : MonoBehaviour
 {
    public List<QandA> QnA;
    public GameObject[] options;
-   
+
    public int currentQuestion;
    private int questionNum;
    
