@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class QuizManager : MonoBehaviour
@@ -25,6 +26,9 @@ public class QuizManager : MonoBehaviour
    //Animations
    public GameObject fader;
    public Animator fadeOutAnimator;
+   
+   [SerializeField] GameObject fourButtons;
+   [SerializeField] GameObject sixButtons;
 
 
    private void Start()
