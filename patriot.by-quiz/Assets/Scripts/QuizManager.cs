@@ -77,7 +77,7 @@ public class QuizManager : MonoBehaviour
       questionNum += 1;
       if (QnA.Count > 0)
       {
-         currentQuestion = Random.Range(0, QnA.Count);
+         //currentQuestion = Random.Range(0, QnA.Count);
 
          questionText.text = QnA[currentQuestion].question;
          SetAnswers();
